@@ -1,0 +1,31 @@
+<div>
+    <h2>Listado de articulos</h2>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Borrar</th>
+            <th>Seleccionar</th>
+        </tr>
+        @for (user of users; track $index) {
+            <tr>
+                <td>
+                    {{user.codigo}}
+                </td>
+                <td>
+                    {{user.descripcion}}
+                </td>
+                <td>
+                    {{user.precio}}
+                </td>
+                <td>
+                    <button (click)="delete(user.codigo)">Borrar?</button>
+                </td>
+                <td>
+                    <button (click)="sel($index)" (click)="send()">Seleccionar</button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
