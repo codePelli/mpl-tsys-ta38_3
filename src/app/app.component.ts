@@ -21,12 +21,13 @@ users: any;
     this.userList.push(user);
   }
 
-  onDeleteUser(user: any){
-    
+  onDeleteArticle(index: number): void {
+    console.log('Deleting item at index:', index);
+    this.userList = this.userList.splice(index);
+    console.log(this.userList)
   }
 
-  onSelUser(user:any){
-    this.userList.push(user);
+  onSelectArticle(index: number): void {
   }
 
   ngOnInit(): void {

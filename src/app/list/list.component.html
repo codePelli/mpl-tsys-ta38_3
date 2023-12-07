@@ -20,10 +20,10 @@
                     {{user.precio}}
                 </td>
                 <td>
-                    <button (click)="delete(user.codigo)">Borrar?</button>
+                    <button (click)="onDelete(user.codigo)">Borrar?</button>
                 </td>
                 <td>
-                    <button (click)="sel($index)" (click)="send()">Seleccionar</button>
+                    <button (click)="onSelect($index)" (click)="send()">Seleccionar</button>
                 </td>
             </tr>
         }

@@ -13,15 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ListComponent implements OnInit{
 
 @Input() users: Array<{ codigo: number; descripcion: string; precio: string }> = [];
-@Output() selUser = new EventEmitter();
-
-delete(codigo: number) {
-  console.log(codigo);
-}
-
-sel(codigo: number) {
-  console.log(codigo);
-}
+@Output() deleteArticle = new EventEmitter<number>();
+@Output() selectArticle = new EventEmitter<{ index: number }>();
 
 selFormGroup: FormGroup;
 
@@ -33,15 +26,26 @@ constructor(private fb: FormBuilder) {
   });
 }
 
+onDelete(index: number) {
+  console.log(index);
+  this.deleteArticle.emit(index);
+}
+
+onSelect(index: number) {
+  throw new Error('Method not implemented.');
+}
+
+send(): void {
+    if (this.selFormGroup.valid) {
+      this.selectArticle.emit({ index: -1 });
+      this.selFormGroup.reset();
+    }
+}
+
 ngOnInit(): void {
   console.log(this.selFormGroup);
 }
 
-send(): void {
-  if (this.selFormGroup.valid) {
-    this.selUser.emit(this.selFormGroup.value);
-    this.selFormGroup.reset();
-  }
-}
+
 
 }

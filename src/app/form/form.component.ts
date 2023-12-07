@@ -12,7 +12,7 @@ import { ListComponent } from '../list/list.component';
 })
 export class FormComponent implements OnInit {
 
-  @Input() user: Array<{ codigo: number; descripcion: string; precio: string }> = [];
+  @Input() selectedArticle: { codigo: number; descripcion: string; precio: string } | null = null;
   @Output() saveUser = new EventEmitter();
 
   userFormGroup: FormGroup;
@@ -26,6 +26,12 @@ export class FormComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log(this.userFormGroup);
+  }
+
+  populateForm(): void {
+    if (this.selectedArticle) {
+      this.userFormGroup.patchValue(this.selectedArticle);
+    }
   }
 
   save(): void {
