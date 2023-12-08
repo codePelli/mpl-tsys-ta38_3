@@ -1,0 +1,30 @@
+body{
+  font-family: "Arial", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+form{
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group{
+  margin-bottom: 20px;
+}
+
+label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+button{
+  margin-right: 10px;
+}

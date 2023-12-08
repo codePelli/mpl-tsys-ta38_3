@@ -1,31 +1,31 @@
-<div>
-    <h2>Listado de articulos</h2>
-    <table>
-        <tr>
-            <th>Código</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Borrar</th>
-            <th>Seleccionar</th>
-        </tr>
-        @for (user of users; track $index) {
-            <tr>
-                <td>
-                    {{user.codigo}}
-                </td>
-                <td>
-                    {{user.descripcion}}
-                </td>
-                <td>
-                    {{user.precio}}
-                </td>
-                <td>
-                    <button (click)="onDelete(user.codigo)">Borrar?</button>
-                </td>
-                <td>
-                    <button (click)="onSelect($index)" (click)="send()">Seleccionar</button>
-                </td>
-            </tr>
-        }
-    </table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Listado de Artículos</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Borrar</th>
+                            <th>Seleccionar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (user of users; track $index) {
+                        <tr>
+                            <td>{{user.codigo}}</td>
+                            <td>{{user.descripcion}}</td>
+                            <td>{{user.precio}}</td>
+                            <td><button (click)="onDelete(user.codigo)" class="btn btn-danger">Borrar</button></td>
+                            <td><button (click)="onSelect($index)" class="btn btn-primary">Seleccionar</button></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
