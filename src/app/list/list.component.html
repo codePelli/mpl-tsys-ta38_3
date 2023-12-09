@@ -19,7 +19,7 @@
                             <td>{{user.codigo}}</td>
                             <td>{{user.descripcion}}</td>
                             <td>{{user.precio}}</td>
-                            <td><button (click)="onDelete(user.codigo)" class="btn btn-danger">Borrar</button></td>
+                            <td><button (click)="onDelete($index)" class="btn btn-danger">Borrar</button></td>
                             <td><button (click)="onSelect($index)" class="btn btn-primary">Seleccionar</button></td>
                         </tr>
                         }
